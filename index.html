@@ -3,76 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>American Legion Selesian Post 599</title>
+  <title>American Legion Post 599</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary-color: #002147;
+      --accent-color: #FFD700;
+      --background-color: #f4f4f4;
+      --text-color: #333;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
     header {
-      background: #001f3f;
-      color: #fff;
+      background-color: var(--primary-color);
+      color: white;
       padding: 1rem 2rem;
       text-align: center;
     }
+
     header img {
-      max-height: 80px;
-      vertical-align: middle;
+      max-height: 70px;
+      margin-bottom: 1rem;
     }
+
     nav {
-      background: #003366;
-      color: #fff;
-      padding: 0.5rem;
+      background-color: #01427c;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('banner-placeholder.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 6rem 2rem;
+      position: relative;
       text-align: center;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-    section {
-      padding: 2rem;
-    }
-    
-  .hero {
-    text-align: center;
-    background: url('banner-placeholder.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 5rem 2rem;
-    position: relative;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* dark overlay */
-    z-index: 0;
-  }
-  .hero h2, .hero p {
-    position: relative;
-    z-index: 1;
-  }
-  .hero h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px #000;
-  }
-  .hero p {
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px #000;
-  }
 
-  footer {
-      background: #001f3f;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
+    }
+
+    .calendar iframe, .zeffy-embed iframe {
+      width: 100%;
+      border: none;
     }
   </style>
 </head>
@@ -93,30 +132,30 @@
 
   <section class="hero">
     <h2>Welcome to Post 599</h2>
-    <p>Serving veterans, families, and the San Francisco community.</p>
+    <p>Serving veterans, families, and the San Francisco community</p>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>American Legion Selesian Post 599 is committed to honoring the service of veterans and supporting their families. We organize events, provide support, and foster community engagement throughout San Francisco.</p>
+    <p>American Legion Selesian Post 599 honors veterans' service and supports their families. We host events, provide community programs, and advocate for veteran issues throughout San Francisco.</p>
   </section>
 
   <section id="membership">
     <h2>Membership</h2>
-    <p>If you have served at least one day of active duty since December 7, 1941, and were honorably discharged or are currently serving honorably, you are eligible to join.</p>
+    <p>If you’ve served at least one day of active duty since December 7, 1941, and were honorably discharged or are currently serving honorably, you're eligible to join. Connect with a proud network of fellow veterans.</p>
   </section>
 
   <section id="events">
     <h2>Upcoming Events</h2>
     <div class="calendar">
-      <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarid%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarid%40group.calendar.google.com&ctz=America%2FLos_Angeles" height="600"></iframe>
     </div>
   </section>
 
   <section id="join">
     <h2>Join Us</h2>
     <div class="zeffy-embed">
-      <iframe src="https://www.zeffy.com/embed/ticketing/3e6964a5-25ce-40ce-a316-736f82cbfab1?modal=true" width="100%" height="700" frameborder="0" scrolling="auto"></iframe>
+      <iframe src="https://www.zeffy.com/embed/ticketing/3e6964a5-25ce-40ce-a316-736f82cbfab1?modal=true" height="700"></iframe>
     </div>
   </section>
 
