@@ -1,1 +1,122 @@
-<!DOCTYPE html><html><head><title>About</title><link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'></head><body style='font-family:Roboto,sans-serif;padding:2rem;'><h2>About Us</h2><p>More info coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – American Legion Post 599</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+    header {
+      background-color: #002147;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header img {
+      max-height: 70px;
+      margin-bottom: 1rem;
+    }
+    nav {
+      background-color: #01427c;
+      padding: 1rem;
+      position: relative;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .hamburger {
+      cursor: pointer;
+      display: block;
+      color: white;
+      font-size: 1.5rem;
+      text-align: right;
+    }
+    @media(min-width: 768px) {
+      .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .hamburger {
+        display: none;
+      }
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    footer {
+      background: #002147;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="American-Legion-Emblem.jpg" alt="American Legion Emblem" role="img" />
+    <h1>American Legion Selesian Post 599</h1>
+    <p>Where Veterans Serve Together</p>
+  </header>
+
+  <nav role="navigation" aria-label="Main menu">
+    <button class="hamburger" aria-label="Toggle navigation menu" onclick="toggleMenu()" aria-expanded="false">☰ Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="membership.html">Membership</a>
+      <a href="join.html">Join</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main role="main">
+    <h2>About Us</h2>
+    <p><strong>Founded in 1921 in San Francisco, American Legion Selesian Post 599</strong> is dedicated to serving veterans, their families, and our wider community.</p>
+
+    <h3>Our Mission</h3>
+    <p>We empower veterans by simplifying access to benefits, fostering career development through mentorship, and building a strong, connected community. We support veteran entrepreneurs launching and growing businesses, and host networking and educational events to strengthen bonds and opportunities.</p>
+
+    <h3>What We Do</h3>
+    <ul>
+      <li>Curate mentor–veteran pairing programs based on field of interest</li>
+      <li>Provide platforms and resources for veteran-owned businesses</li>
+      <li>Host code-and-connect meetups, workshops, and veteran-focused networking events</li>
+      <li>Collaborate with local organizations to expand support and advocacy resources</li>
+    </ul>
+
+    <h3>Why We Matter</h3>
+    <p>By blending innovation, camaraderie, and partnership, Post 599 ensures veterans have the tools, community, and respect they deserve—supporting them through career transitions and beyond.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 American Legion Selesian Post 599. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      const expanded = nav.style.display === 'flex';
+      nav.style.display = expanded ? 'none' : 'flex';
+      document.querySelector('.hamburger').setAttribute('aria-expanded', !expanded);
+    }
+  </script>
+</body>
+</html>

@@ -1,1 +1,92 @@
-<!DOCTYPE html><html><head><title>Join</title><link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'></head><body style='font-family:Roboto,sans-serif;padding:2rem;'><h2>Join</h2><iframe src='https://www.zeffy.com/embed/ticketing/3e6964a5-25ce-40ce-a316-736f82cbfab1?modal=true' width='100%' height='700'></iframe></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+  }
+  header {
+    background-color: #002147;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  header img {
+    max-height: 70px;
+    margin-bottom: 1rem;
+  }
+  nav {
+    background-color: #01427c;
+    padding: 1rem;
+    position: relative;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .hamburger {
+    cursor: pointer;
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    text-align: right;
+  }
+  @media(min-width: 768px) {
+    .nav-links {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <header>
+  <img src="American-Legion-Emblem.jpg" alt="American Legion Emblem" role="img" />
+  <h1>American Legion Selesian Post 599</h1>
+  <p>Where Veterans Serve Together</p>
+</header>
+<nav role="navigation" aria-label="Main menu">
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰ Menu</div>
+  <div class="nav-links" id="navLinks">
+    <a href="about.html">About</a>
+    <a href="membership.html">Membership</a>
+    <a href="join.html">Join</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const expanded = nav.style.display === 'flex';
+    nav.style.display = expanded ? 'none' : 'flex';
+    document.querySelector('.hamburger').setAttribute('aria-expanded', !expanded);
+  }
+</script>
+  <main role="main" style="padding: 2rem;"><h2>Join</h2><iframe src='https://www.zeffy.com/embed/ticketing/3e6964a5-25ce-40ce-a316-736f82cbfab1?modal=true' width='100%' height='700'></iframe></main>
+  <footer style="background:#002147;color:white;text-align:center;padding:1rem;">
+    <p>&copy; 2025 American Legion Selesian Post 599. All rights reserved.</p>
+  </footer>
+</body>
+</html>
