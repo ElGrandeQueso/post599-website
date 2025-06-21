@@ -41,20 +41,29 @@
 
     nav {
       background-color: #01427c;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
       padding: 1rem;
+      position: relative;
     }
 
-    nav a {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 700;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .hamburger {
+      cursor: pointer;
+      display: block;
+      color: white;
+      font-size: 1.5rem;
+      text-align: right;
     }
 
     .hero {
@@ -89,18 +98,6 @@
       text-shadow: 1px 1px 3px #000;
     }
 
-    section {
-      padding: 3rem 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
-    }
-
     footer {
       background-color: var(--primary-color);
       color: white;
@@ -109,25 +106,35 @@
       margin-top: 2rem;
     }
 
-    .calendar iframe, .zeffy-embed iframe {
-      width: 100%;
-      border: none;
+    @media(min-width: 768px) {
+      .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .hamburger {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+  <main role="main">
   <header>
-    <img src="American-Legion-Emblem.jpg" alt="American Legion Emblem" />
+    <img src="American-Legion-Emblem.jpg" alt="American Legion Emblem" role="img" />
     <h1>American Legion Selesian Post 599</h1>
     <p>Where Veterans Serve Together</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#membership">Membership</a>
-    <a href="#events">Events</a>
-    <a href="#join">Join</a>
-    <a href="#contact">Contact</a>
+  <nav role="navigation" aria-label="Main menu">
+    <button class="hamburger" aria-label="Toggle navigation menu" onclick="toggleMenu()" aria-expanded="false">☰ Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="membership.html">Membership</a>
+      <a href="join.html">Join</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 
   <section class="hero">
@@ -135,38 +142,16 @@
     <p>Serving veterans, families, and the San Francisco community</p>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>American Legion Selesian Post 599 honors veterans' service and supports their families. We host events, provide community programs, and advocate for veteran issues throughout San Francisco.</p>
-  </section>
-
-  <section id="membership">
-    <h2>Membership</h2>
-    <p>If you’ve served at least one day of active duty since December 7, 1941, and were honorably discharged or are currently serving honorably, you're eligible to join. Connect with a proud network of fellow veterans.</p>
-  </section>
-
-  <section id="events">
-    <h2>Upcoming Events</h2>
-    <div class="calendar">
-      <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarid%40group.calendar.google.com&ctz=America%2FLos_Angeles" height="600"></iframe>
-    </div>
-  </section>
-
-  <section id="join">
-    <h2>Join Us</h2>
-    <div class="zeffy-embed">
-      <iframe src="https://www.zeffy.com/embed/ticketing/3e6964a5-25ce-40ce-a316-736f82cbfab1?modal=true" height="700"></iframe>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:hanleychan@icloud.com">hanleychan@icloud.com</a></p>
-    <p>Location: San Francisco, CA</p>
-  </section>
-
   <footer>
     <p>&copy; 2025 American Legion Selesian Post 599. All rights reserved.</p>
   </footer>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
 </body>
 </html>
